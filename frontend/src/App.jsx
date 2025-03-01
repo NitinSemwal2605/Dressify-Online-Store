@@ -1,21 +1,21 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import {Routes, Route} from "react-router-dom";
-import Collection from "./pages/Collection";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Product from "./pages/Product";
-import Cart from "./pages/Cart";
-import Login from "./pages/Login";
-import PlaceOrder from "./pages/PlaceOrder";
-import Orders from "./pages/Orders";
-import Home from "./pages/Home";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import SearchBar from "./components/SearchBar";
+import Collection from "./pages/Collection.jsx";
+import About from "./pages/About.jsx";
+import Contact from "./pages/Contact.jsx";
+import Product from "./pages/Product.jsx";
+import Cart from "./pages/Cart.jsx";
+import Login from "./pages/Login.jsx";
+import PlaceOrder from "./pages/PlaceOrder.jsx";
+import Orders from "./pages/Orders.jsx";
+import Home from "./pages/Home.jsx";
+import Navbar from "./components/Navbar.jsx";
+import Footer from "./components/Footer.jsx";
+import SearchBar from "./components/SearchBar.jsx";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Verify from "./pages/Verify";
+import Verify from "./pages/Verify.jsx";
 
 const App = () => {
   return (

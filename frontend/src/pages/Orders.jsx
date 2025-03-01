@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import Title from "../components/title.jsx";
-import { ShopContext } from "../context/ShopContext";
+import { ShopContext } from "../context/ShopContext.jsx";
 
 const Orders = () => {
   const token = localStorage.getItem("token");

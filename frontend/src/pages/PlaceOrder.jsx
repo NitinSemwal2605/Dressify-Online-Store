@@ -3,9 +3,9 @@ import { useContext, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { assets } from '../assets/frontend_assets/assets';
-import CartTotal from '../components/CartTotal';
+import CartTotal from '../components/CartTotal.jsx';
 import Title from '../components/title.jsx';
-import { ShopContext } from '../context/ShopContext';
+import { ShopContext } from '../context/ShopContext.jsx';
 import { useNavigate } from 'react-router-dom';
 
 const PlaceOrder = () => {
