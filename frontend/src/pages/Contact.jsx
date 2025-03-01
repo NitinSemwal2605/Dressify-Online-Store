@@ -1,5 +1,5 @@
 import { assets } from '../assets/frontend_assets/assets';
-import Title from '../Components/Title';
+import Title from '../Components/title.jsx';
 
 const Contact = () => {
   const scrollToTop = () => {
