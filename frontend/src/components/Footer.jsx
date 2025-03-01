@@ -8,7 +8,7 @@ const Footer = () => {
       <div>
         <img src={assets.logo} alt="" className='mb-5 w-32' />
         <p className='w-full md:w-2/3 text-gray-600'>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit eius perspiciatis aut numquam ut velit!
+            Dressify – Your Ultimate Destination for Trendy & Timeless Fashion!
         </p>
       </div>
 
