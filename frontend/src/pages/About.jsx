@@ -1,6 +1,6 @@
 import { assets } from '../assets/frontend_assets/assets';
 // import NewsLetterBox from '../Components/NewsLetterBox';
-import Title from '../Components/title.jsx';
+import Title from '../components/title.jsx';
 
 const About = () => {
   return (
