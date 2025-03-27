@@ -1,6 +1,4 @@
-Got it! Since the **Admin Panel** has additional files, I’ll modify the structure and README to reflect that. Below is the refined and updated **`README.md`** code with an accurate description of the admin panel.
 
----
 
 ```markdown
 # 🧥 Dressify
