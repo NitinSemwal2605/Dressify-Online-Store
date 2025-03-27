@@ -1,4 +1,3 @@
-Here’s a **professional and detailed `README.md`** for your **Dressify** project! 🚀
 
 ---
 
@@ -115,7 +114,7 @@ Here’s a **professional and detailed `README.md`** for your **Dressify** proje
 
 ### 1. **Clone the Repository**
 ```bash
-git clone https://github.com/username/dressify.git
+git clone h[ttps://github.com/username/dressify.git](https://github.com/NitinSemwal2605/Dressify-Online-Store)
 cd dressify
 ```
 
@@ -127,6 +126,12 @@ cd dressify
 MONGO_URI=mongodb://localhost:27017/dressify
 JWT_SECRET=your_secret_key
 STRIPE_SECRET=your_stripe_key
+CLOUDINARY_SECRET_KEY = your key
+CLOUDINARY_CLOUD_NAME = cloud name
+CLOUDINARY_API_KEY = your key 
+ADMIN Username = username
+ADMIN Password = password
+
 ```
 
 ```bash
