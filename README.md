@@ -212,7 +212,7 @@ npm run dev
 
 👨‍💻 **Developer:** Nitin Semwal  
 📧 **Email:** [55semwalnitin@gmail.com](mailto:55semwalnitin@gmail.com)  
-🔗 **GitHub:** [GitHub Profile](https://github.com/nitinsemwal)  
+🔗 **GitHub:** [GitHub Profile](https://github.com/NitinSemwal2605)  
 
 ---
 
