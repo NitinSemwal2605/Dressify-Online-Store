@@ -1,0 +1,14 @@
+How is state managed in the cart & checkout flow? in theoritical sense 
+Ans. I've used a combination of local state management and context API to manage the cart and checkout flow. The cart data is stored in the user's session or local storage, allowing for persistence across page reloads. The context API is used to provide a global state for the cart, making it accessible throughout the application without prop drilling. This approach allows for efficient updates and re-renders when items are added, removed, or updated in the cart. Additionally, I ensure that the cart state is synchronized with the backend whenever changes are made, providing a seamless user experience.
+
+How is error handling managed?
+Ans : I've implemented error handling at multiple levels in the application. On the frontend, I use try-catch blocks to handle asynchronous operations and display user-friendly error messages when an operation fails. On the backend, I have middleware to catch errors and send appropriate HTTP status codes and messages. Additionally, I log errors for further analysis and debugging. This layered approach ensures that users receive clear feedback while maintaining a robust system for tracking issues.
+
+How did you ensure performance and scalability in this project?
+Ans : To ensure performance and scalability, I've followed best practices such as code splitting, lazy loading of components, and optimizing images. I've also used memoization techniques to prevent unnecessary re-renders in React components. On the backend, I've optimized database queries and used indexing where necessary. Additionally, I've set up caching mechanisms to reduce load times for frequently accessed data. This architecture allows the application to handle increased traffic without compromising performance.
+
+How does the search feature work technically?
+Ans : The search feature is implemented using a combination of client-side and server-side logic. On the frontend, I capture user input in a search bar and send it to the backend via an API call. The backend processes the search query, querying the database for matching products based on various criteria (e.g., name, category). The results are then returned to the frontend, where they are displayed to the user. I've also implemented debouncing to reduce the number of API calls made during typing, improving performance and user experience.
+
+What challenges did you face integrating Stripe and how did you solve them?
+Ans : Integrating Stripe presented challenges such as handling webhooks for payment confirmations and ensuring secure transactions. To solve these, I carefully followed Stripe's documentation, using their SDKs for both frontend and backend. I set up webhook endpoints to listen for payment events and update the order status accordingly. Additionally, I implemented error handling to manage failed payments gracefully, providing users with clear feedback on any issues.
