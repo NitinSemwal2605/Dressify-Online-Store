@@ -2,7 +2,22 @@ import React, { useContext, useEffect, useState } from 'react';
 import { ShopContext } from '../context/ShopContext.jsx';
 import ProductItem from './ProductItem';
 import Title from './title.jsx';
-import Loader from './Loader'; // Import Loader component
+
+// Skeleton component for product loading
+const ProductSkeleton = () => {
+  return (
+    <div className="bg-white rounded-lg shadow-md overflow-hidden animate-pulse">
+      {/* Image skeleton */}
+      <div className="w-full h-48 bg-gray-200"></div>
+      {/* Content skeleton */}
+      <div className="p-3">
+        <div className="h-4 bg-gray-200 rounded mb-2"></div>
+        <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+        <div className="h-6 bg-gray-200 rounded w-1/2 mt-2"></div>
+      </div>
+    </div>
+  );
+};
 
 const LatestCollection = () => {
   const { products } = useContext(ShopContext);
@@ -37,10 +52,12 @@ const LatestCollection = () => {
         </p>
       </div>
 
-      {/* Show Loader while loading */}
+      {/* Show skeleton loading while loading */}
       {loading ? (
-        <div className="flex justify-center items-center h-40">
-          <Loader />
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6">
+          {[...Array(10)].map((_, index) => (
+            <ProductSkeleton key={index} />
+          ))}
         </div>
       ) : (
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6">
