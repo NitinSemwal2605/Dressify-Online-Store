@@ -10,7 +10,7 @@ export const ShopContext = createContext();
 const ShopContextProvider = ({ children }) => {  
     const currency = "₹";
     const deliveryCharge = 50;
-    const backendURL = import.meta.env.VITE_BACKEND_URL || "http://localhost:8001"; 
+    const backendURL = import.meta.env.VITE_BACKEND_URL || "http://localhost:8001";
     const [search, setSearch] = useState("");
     const [showSearch, setShowSearch] = useState(false); 
     const [cartItems, setCartItems] = useState({});
