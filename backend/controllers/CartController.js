@@ -6,21 +6,23 @@ import UserModel from '../models/userModel.js';
 const addToCart = async (req, res) => {
     try {
         const { itemId, size } = req.body;
-        const userId = req.user?.id;
+        const userId = req.user?.id; // Getting user ID from request
 
         if (!userId) {
             return res.status(400).json({ message: 'User ID is required' });
         }
 
+        // Now Check , If userData exists
         const userData = await UserModel.findById(userId);
         if (!userData) {
             return res.status(404).json({ message: 'User not found' });
         }
 
+        // Access the user's cartData
         let cartData = userData.cartData || {};
-        if (cartData[itemId]) {
+        if (cartData[itemId]) { // If item already exists in the cart then increment the quantity
             cartData[itemId][size] ? cartData[itemId][size]++ : cartData[itemId][size] = 1;
-        } else {
+        } else { // If item does not exist in the cart, add it with quantity 1
             cartData[itemId] = { [size]: 1 };
         }
 
@@ -81,12 +83,15 @@ const updateCart = async (req, res) => {
 
 const getCart = async (req, res) => {
     try {
+        // Firstly, we need to get the user ID from the request
         const userId = req.user.id; // Ensure authUser middleware sets req.user
         console.log('User ID:', userId);
 
+        // Validate user ID by checking if it exists
         const userData = await UserModel.findById(userId);
         if (!userData) throw new Error('User not found');
 
+        // If userData is found, we can access the cartData
         res.status(200).json({ success: true, cart: userData.cartData || {} }); // Send cart data
     } catch (error) {
         console.error('Error in getCart:', error.message);

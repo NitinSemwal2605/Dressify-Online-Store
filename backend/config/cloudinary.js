@@ -1,4 +1,4 @@
-import {v2 as cloudinary} from 'cloudinary';
+import { v2 as cloudinary } from 'cloudinary';
 
 const connectCloudinary = async () => {
 
@@ -10,3 +10,13 @@ const connectCloudinary = async () => {
 }
 
 export default connectCloudinary;
+
+/*
+
+Explaination:
+ - connectCloudinary function initializes the Cloudinary configuration using environment variables.
+    - It exports the function to be used in other parts of the application.
+    - The v2 module from cloudinary is imported to access the Cloudinary API.
+    - The function is called in the main server file to ensure Cloudinary is configured before handling requests.
+
+*/

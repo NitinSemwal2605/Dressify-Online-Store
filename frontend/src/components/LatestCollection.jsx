@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { ShopContext } from '../context/ShopContext.jsx';
 import ProductItem from './ProductItem';
 import Title from './title.jsx';
@@ -24,6 +24,7 @@ const LatestCollection = () => {
   const [latestProducts, setLatestProducts] = useState([]);
   const [loading, setLoading] = useState(true); // New state for loader
 
+  // Effect to set latest products from the products array
   useEffect(() => {
     if (Array.isArray(products) && products.length > 0) {
       setLatestProducts([
@@ -39,9 +40,9 @@ const LatestCollection = () => {
         products[32],
       ].filter(Boolean)); // Filter out undefined entries
 
-      setLoading(false); // Data is loaded
+      setLoading(false); // It means products are loaded
     }
-  }, [products]);
+  }, [products]); // Runs when products change
 
   return (
     <div className="my-10">
@@ -55,6 +56,7 @@ const LatestCollection = () => {
       {/* Show skeleton loading while loading */}
       {loading ? (
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6">
+          {/* Create skeletons for loading state */}
           {[...Array(10)].map((_, index) => (
             <ProductSkeleton key={index} />
           ))}

@@ -1,9 +1,12 @@
-import userModel from "../models/userModel.js";
-import validator from "validator";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import validator from "validator";
+import userModel from "../models/userModel.js";
 
-
+// Function to create a JWT token
+// This function generates a token using the user's ID and a secret key from environment variables.
+// The token is set to expire in 30 days.
+// It is used for authenticating users in subsequent requests.
 const createToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
     expiresIn: "30d",
@@ -11,10 +14,9 @@ const createToken = (id) => {
 };
 
 // Route for user login
-
 const loginUser = async (req, res) => {
     try {
-        const { email, password } = req.body;
+        const { email, password } = req.body; // Extracting email and password from request body
     
         // Check if user exists
         const user = await userModel.findOne({ email });
@@ -22,8 +24,9 @@ const loginUser = async (req, res) => {
         if (!user) {
             return res.status(400).json({ message: "User not found" });
         }
-
-        // Check if password is correct
+        
+        // Check if password is correct by comparing the hashed password stored in the database with the password provided by the user
+        // bcrypt.compare() is used to compare the plain text password with the hashed password.
         const isMatch = await bcrypt.compare(password, user.password);
 
         if (!isMatch) {
@@ -110,4 +113,5 @@ const adminLogin = async (req, res) => {
     }
 };
 
-export { loginUser, registerUser, adminLogin };
+export { adminLogin, loginUser, registerUser };
+

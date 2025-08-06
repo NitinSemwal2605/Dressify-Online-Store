@@ -223,7 +223,7 @@ const ShopContextProvider = ({ children }) => {
             setToken(storedToken);
             getUserCart(storedToken); // Fetch the cart once the token is set
         }
-    }, [token]);
+    }, [token]); // Runs on token change (Rerendering)
 
     // Context value
     const value = {

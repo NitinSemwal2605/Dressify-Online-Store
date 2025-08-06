@@ -7,7 +7,8 @@ import { ShopContext } from "../context/ShopContext.jsx";
 const Cart = () => {
   const { products, currency, cartItems, updateQuantity, navigate, addOrder } = useContext(ShopContext);
   const [cartData, setCartData] = useState([]);
-
+  // Convert cartItems object to an array of items with their sizes and quantities.
+  // This will be used to render the cart items.
   useEffect(() => {
     let tempData = [];
     for (const itemId in cartItems) {
@@ -31,6 +32,7 @@ const Cart = () => {
       </div>
 
       {/* Cart Items */}
+      {/* Map through cartData to display each item */}
       <div>
         {cartData.length > 0 ? (
           cartData.map((item, index) => {
@@ -120,3 +122,4 @@ const Cart = () => {
 };
 
 export default Cart;
+
